@@ -8,9 +8,9 @@ require_once 'functions/message.php';
 require_once 'functions/auth.php';  
 
 if (empty($_GET['route'])) {
-    $route = 'login';
+    $page = 'login';
 } else {
-    $route = $_GET['route'];
+    $page = $_GET['route'];
 }
    
 
