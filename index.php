@@ -7,6 +7,10 @@ require_once 'functions/url.php';
 require_once 'functions/message.php';
 require_once 'functions/auth.php';  
 
+$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+
+$pdo = new PDO($dsn, DB_USER, DB_PASS);
+
 if (empty($_GET['route'])) {
     $page = 'login';
 } else {
@@ -39,6 +43,8 @@ switch ($page) {
 $page_template = 'templates/page_' . $page . '.php';
 
 require_once 'templates/head.php';
+
+
 
 if (file_exists($page_template)) {
     require_once $page_template;

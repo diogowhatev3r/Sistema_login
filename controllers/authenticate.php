@@ -9,13 +9,21 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 $login = $_POST['username'];
 $password = $_POST['password'];
 
-if ($login == USER_LOGIN && $password == USER_PASSWORD) {
+$query = 'SELECT name FROM users WHERE login = ? AND password = ?';
+
+$sql = $pdo->prepare($query);
+
+if ($sql->execute([$login, $password])) {
+    $user = $sql->fetch(PDO::FETCH_ASSOC);
+} else {
+    $user = [];
+}
+
+
+
+if (!empty($user)) {
 
     $_SESSION['is_authenticated'] = true;
-    set_flash_message("Utilizador autenticado com sucesso!");
-    url_redirect(['route' => 'dashboard']);
-} else {
 
-    set_flash_message("Utilizador ou senha incorreta, tente novamente!");
-    url_redirect(['route' => 'login']);
+    $_SESSION['user'] = $user;
 }
