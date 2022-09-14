@@ -34,6 +34,6 @@ if (!empty($user)) {
     
         set_flash_message("Usuário ou senha inválidos!");
         url_redirect(['route' => 'login']);
-    }
+    }   
 
 /*Codigo do README 8*/

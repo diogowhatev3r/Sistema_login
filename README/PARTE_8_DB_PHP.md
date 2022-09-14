@@ -144,6 +144,8 @@ if ($sql->execute([$login, $password])) {
     * se SUCESSO, retorna um array associativo sendo que a 'chave' do
     * array assotivo é o "nome da coluna" em base dados e o 'valor'
     * do array associativo é o "valor da coluna" em base de dados.
+    * :: é uma classe estática, ou seja, não precisamos de instanciar
+    
     */
     $user = $sql->fetch(PDO::FETCH_ASSOC);
 } else {
