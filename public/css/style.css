@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     font-family: system-ui;
     font-size: 14px;
 }
@@ -45,7 +46,7 @@ body, html {
 
 .menu ul {
     height: 100%;
-    
+
     display: flex;
     align-items: center;
 }
@@ -71,7 +72,7 @@ body, html {
 
 /* form */
 .form .form-group {
-    margin-bottom: 8px;    
+    margin-bottom: 8px;
 }
 
 .form input {
@@ -108,4 +109,13 @@ body, html {
     padding: 8px;
     border-radius: 3px;
     color: white;
+}
+
+.table {
+    width: 100%;
+}
+
+.table th,
+.table td {
+    text-align: left;
 }

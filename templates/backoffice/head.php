@@ -15,13 +15,13 @@
             <nav class="menu flex flex-justify-space-between">
                 <ul>
                     <li>
-                        <a href="?route=home">Home</a>
+                        <a href="<?php echo url_generate(['route' => 'home']); ?>">Home</a>
                     </li>
                     <li>
-                        <a href="?route=about">Sobre Nós</a>
+                        <a href="<?php echo url_generate(['route' => 'user_read']); ?>">Utilizadores</a>
                     </li>
                     <li>
-                        <a href="?route=contact">Contacto</a>
+                        <a href="<?php echo url_generate(['route' => 'contact']); ?>">Contacto</a>
                     </li>
                 </ul>
                 <ul>
@@ -34,10 +34,10 @@
                     <li>
                 <?php if (is_authenticated()) : ?>
                         <!-- Este hyperlink só será exibido caso eu tenha me autenticado -->
-                        <a class="user-login-button" href="?route=logout">Fazer Logout</a>
+                        <a class="user-login-button" href="<?php echo url_generate(['route' => 'logout']); ?>">Fazer Logout</a>
                 <?php else : ?>
                         <!-- Este hyperlink só será exibido caso eu não tenha me autenticado -->
-                        <a class="user-login-button" href="?route=login">Fazer Login</a>
+                        <a class="user-login-button" href="<?php echo url_generate(['route' => 'login']); ?>">Fazer Login</a>
                 <?php endif; ?>
                     </li>
                 </ul>

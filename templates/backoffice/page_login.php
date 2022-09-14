@@ -1,5 +1,5 @@
 <div class="page">
-    <form action="?route=authenticate" method="POST" class="form form-login">
+    <form action="<?php echo url_generate(['route' => 'authenticate']); ?>" method="POST" class="form form-login">
         <h1>Área reservada</h1>
         <div class="horizontal-line"></div>
         <div class="form-group flex flex-col">
