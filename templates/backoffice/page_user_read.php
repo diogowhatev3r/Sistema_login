@@ -28,6 +28,9 @@ if ($sql->execute()) {
             <td><?php echo $user['login'] ?></td>
             <td><?php echo $user['created_at'] ?></td>
             <td><?php echo $user['updated_at'] ?></td>
+            <td>
+                <a href="<?php echo url_generate(['route' => 'user_update', 'params' => ['id' => $user['id']]]); ?>">Editar</a>
+                <a href="<?php echo url_generate(['route' => 'user_delete', 'params' => ['id' => $user['id']]]); ?>">Apagar</a>
         </tr>
         <?php endforeach; ?>
     </table>
